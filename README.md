@@ -11,7 +11,7 @@ This section walks you through deploying a sample application to AWS Elastic Bea
 ###Step 1: Initialize Your Git Repository
 Eb is a command line interface that enables you to deploy applications quickly and more easily using Git. Eb is available as part of the Elastic Beanstalk command line tools package. Follow the steps below to install eb and initialize your Git repository.
 ####To install eb, its prerequisite software, and initialize your Git repository
-1. Install the following software onto your local computer:
+1. #####Install the following software onto your local computer:
 
   a. Linux/Unix/MAC
     - Download and unzip the Elastic Beanstalk command line tools package at the AWS Sample Code & Libraries website. You can install either version 2.6.0 or version 2.6.1 of the AWS DevTools. Version 2.6.0 uses Ruby. Version 2.6.1 uses Python.
@@ -25,7 +25,7 @@ Eb is a command line interface that enables you to deploy applications quickly a
     - PowerShell 2.0.
     *Note:  Windows 7 and Windows Server 2008 R2 come with PowerShell 2.0. If you are running an earlier version of Windows, you can download PowerShell 2.0. Visit http://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx for more details.*
 
-2. Initialize your Git repository.
+2. #####Initialize your Git repository.
   
   ```bash
   git init .
