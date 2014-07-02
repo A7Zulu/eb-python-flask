@@ -17,23 +17,14 @@ Eb is a command line interface that enables you to deploy applications quickly a
 1. Install the following software onto your local computer:
 
   a. Linux/Unix/MAC
-
     - Download and unzip the Elastic Beanstalk command line tools package at the AWS Sample Code & Libraries website. You can install either version 2.6.0 or version 2.6.1 of the AWS DevTools. Version 2.6.0 uses Ruby. Version 2.6.1 uses Python.
-
     - Git 1.6.6 or later. To download Git, go to http://git-scm.com/.
-
     - Ruby version 1.8.7 or later. To view and download Ruby clients, go to http://www.ruby-lang.org/en/.
-
     - Python 2.7 or 3.0.
-
   b. Windows
-
     - Download and unzip the Elastic Beanstalk command line tools package at the AWS Sample Code & Libraries website.
-
     - Git 1.6.6 or later. To download Git, go to http://git-scm.com/.
-
     - PowerShell 2.0.
-
         *Note:  Windows 7 and Windows Server 2008 R2 come with PowerShell 2.0. If you are running an earlier version of Windows, you can download PowerShell 2.0. Visit http://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx for more details.*
 
 2. Initialize your Git repository.
@@ -51,7 +42,7 @@ Before you use eb, set your PATH to the location of eb. The following table show
 
 On Linux and UNIX	| On Windows
 --- | ---
-`$ export PATH=$PATH:<path to unzipped EB CLI package>/eb/linux/python2.7/` |	`C:\> set PATH=%PATH%;<path to unzipped EB CLI package>\eb\windows\`
+```$ export PATH=$PATH:<path to unzipped EB CLI package>/eb/linux/python2.7/``` |	```C:\> set PATH=%PATH%;<path to unzipped EB CLI package>\eb\windows\```
 
 Use the init command, and AWS Elastic Beanstalk will prompt you to enter this information. If a default value is available, and you want to use it, press Enter.
 
@@ -135,7 +126,9 @@ Use the start command to create and deploy a sample application.
 
   - From your directory where you created your local repository, type the following command.
 
-  `eb start`
+  ```bash
+  eb start
+  ```
   
 This process may take several minutes to complete. AWS Elastic Beanstalk will provide status updates during the process. If at any time you want to stop polling for status updates, press Ctrl+C. Once the environment status is Green, AWS Elastic Beanstalk will output a URL for the application.
 
@@ -155,3 +148,79 @@ Use the status command to check the environment status, and then use the URL to 
   AWS Elastic Beanstalk displays the environment status. If the environment is set to Green, AWS Elastic Beanstalk displays the URL for the application. If you attached an RDS DB instance to your environment, your RDS DB information is displayed.
 
 2. Copy and paste the URL into your web browser to view your application.
+
+###Step 5: Update Application
+
+After you have deployed a sample application, you can update the sample application with your own application. In this step, we'll update the sample application with a simple "Hello World" Flask application.
+
+####To update the sample application
+
+1. On your local computer, create a requirements.txt file.
+
+  ```bash
+  Flask==0.9
+  ```
+
+  *Note:  For more information about the requirements file, go to Requirements files.
+On your local computer, create an application.py file.*
+
+  ```python
+  import flask
+ 
+  application = flask.Flask(__name__)
+
+  #Set application.debug=true to enable tracebacks on Beanstalk log output. 
+  #Make sure to remove this line before deploying to production.
+  application.debug=True
+ 
+  @application.route('/')
+  def hello_world():
+      return "Hello world!"
+ 
+  if __name__ == '__main__':
+      application.run(host='0.0.0.0', debug=True)
+  ```    
+  
+  
+2. Add your two files to your local Git repository, and then commit your change.
+
+  ```bash
+  git add .
+  git commit -m "update app"
+  ```
+
+  *Note:  For information about Git commands, go to Git - Fast Version Control System.
+Create an application version matching your local repository and deploy to the Elastic Beanstalk environment if specified.*
+
+  ```bash
+  git aws.push
+  ```
+
+  You can also configure Git to push from a specific branch to a specific environment. For more information, see Deploying a Git Branch to a Specific Environment.
+
+5. Refresh your web browser to view your updated application when your environment is ready.
+
+You can access the logs for your EC2 instances running your application. For instructions on accessing your logs, see Working with Logs.
+
+###Step 6: Clean Up
+
+If you no longer want to run your application, you can clean up by terminating your environment and deleting your application.
+Use the stop command to terminate your environment and the delete command to delete your application.
+
+####To delete the application
+
+1. From your directory where you created your local repository, type the following command.
+
+  ```bash
+  eb stop
+  ```
+  This process may take a few minutes. AWS Elastic Beanstalk will display a message once the environment has been successfully terminated.
+
+  *Note:  If you attached an RDS DB instance to your environment, your RDS DB will be deleted, and you will lose your data. To save your data, create a snapshot before you delete the application. For instructions on how to create a snapshot, go to Creating a DB Snapshot in the Amazon Relational Database Service User Guide.*
+
+2. From your directory where you installed the command line interface, type the following command.
+
+  ```bash
+  eb delete
+  ```
+  AWS Elastic Beanstalk will display a message once it has successfully deleted the application.
