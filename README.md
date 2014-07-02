@@ -34,6 +34,7 @@ Eb is a command line interface that enables you to deploy applications quickly a
 ###Step 2: Configure AWS Elastic Beanstalk
 
 You use eb, a command line tool, to configure AWS Elastic Beanstalk. If you haven't already installed eb on your local computer, do that now at the AWS Sample Code & Libraries website. If you are running eb on a Linux operating system, you will need to install Python 2.7 or 3.0.
+
 Before you use eb, set your PATH to the location of eb. The following table shows an example for Linux/UNIX and Windows.
 
 On Linux and UNIX	| On Windows
@@ -104,6 +105,7 @@ Use the init command, and AWS Elastic Beanstalk will prompt you to enter this in
 11. When you are prompted to enter your instance profile name, you can choose to create a default instance profile or use an existing instance profile. Using an instance profile enables IAM users and AWS services to gain access to temporary security credentials to make AWS API calls. Using instance profiles prevents you from having to store long-term security credentials on the EC2 instance. For more information about instance profiles, see Granting Permissions to Users and Services Using IAM Roles. For this example, we'll use Create a default instance profile.
 
 After configuring AWS Elastic Beanstalk, you are ready to deploy a sample application.
+
 If you want to update your AWS Elastic Beanstalk configuration, you can use the init command again. When prompted, you can update your configuration options. If you want to keep any previous settings, press the Enter key.
 
 ###Step 3: Create Application
@@ -129,6 +131,7 @@ This process may take several minutes to complete. AWS Elastic Beanstalk will pr
 ###Step 4: View Application
 
 In the previous step, you created an application and deployed it to AWS Elastic Beanstalk. After the environment is ready and its status is Green, AWS Elastic Beanstalk provides a URL to view the application. In this step, you can check the status of the environment to make sure it is set to Green and then copy and paste the URL to view the application.
+
 Use the status command to check the environment status, and then use the URL to view the application.
 
 ####To view the application
@@ -195,6 +198,7 @@ You can access the logs for your EC2 instances running your application. For ins
 ###Step 6: Clean Up
 
 If you no longer want to run your application, you can clean up by terminating your environment and deleting your application.
+
 Use the stop command to terminate your environment and the delete command to delete your application.
 
 ####To delete the application
