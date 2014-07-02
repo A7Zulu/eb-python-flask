@@ -216,4 +216,5 @@ Use the stop command to terminate your environment and the delete command to del
   ```bash
   eb delete
   ```
+
 AWS Elastic Beanstalk will display a message once it has successfully deleted the application.
