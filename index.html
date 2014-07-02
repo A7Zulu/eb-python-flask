@@ -30,8 +30,8 @@
 
       </header>
       <section>
-        <h1>
-<a name="deploying-a-flask-application-to-aws-elastic-beanstalk" class="anchor" href="#deploying-a-flask-application-to-aws-elastic-beanstalk"><span class="octicon octicon-link"></span></a>Deploying a Flask Application to AWS Elastic Beanstalk</h1>
+        <h2>
+<a name="deploying-a-flask-application-to-aws-elastic-beanstalk" class="anchor" href="#deploying-a-flask-application-to-aws-elastic-beanstalk"><span class="octicon octicon-link"></span></a>Deploying a Flask Application to AWS Elastic Beanstalk</h2>
 
 <p>Simple Python and Flask sample application from <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_Python_flask.html">AWS Elastic Beanstalk Developer Guide</a></p>
 
@@ -40,12 +40,13 @@
 <ul>
 <li>Flask 0.9</li>
 <li>Flask 0.8</li>
-</ul><h2>
-<a name="step-1-initialize-your-git-repository" class="anchor" href="#step-1-initialize-your-git-repository"><span class="octicon octicon-link"></span></a>Step 1: Initialize Your Git Repository</h2>
+</ul><h3>
+<a name="step-1-initialize-your-git-repository" class="anchor" href="#step-1-initialize-your-git-repository"><span class="octicon octicon-link"></span></a>Step 1: Initialize Your Git Repository</h3>
 
 <p>Eb is a command line interface that enables you to deploy applications quickly and more easily using Git. Eb is available as part of the Elastic Beanstalk command line tools package. Follow the steps below to install eb and initialize your Git repository.</p>
 
-<p>To install eb, its prerequisite software, and initialize your Git repository</p>
+<h4>
+<a name="to-install-eb-its-prerequisite-software-and-initialize-your-git-repository" class="anchor" href="#to-install-eb-its-prerequisite-software-and-initialize-your-git-repository"><span class="octicon octicon-link"></span></a>To install eb, its prerequisite software, and initialize your Git repository</h4>
 
 <ol>
 <li>
@@ -54,37 +55,236 @@
 <p>a. Linux/Unix/MAC</p>
 
 <ul>
-<li><p>Download and unzip the Elastic Beanstalk command line tools package at the AWS Sample Code &amp; Libraries website. You can install either version 2.6.0 or version 2.6.1 of the AWS DevTools. Version 2.6.0 uses Ruby. Version 2.6.1 uses Python.</p></li>
-<li><p>Git 1.6.6 or later. To download Git, go to <a href="http://git-scm.com/">http://git-scm.com/</a>.</p></li>
-<li><p>Ruby version 1.8.7 or later. To view and download Ruby clients, go to <a href="http://www.ruby-lang.org/en/">http://www.ruby-lang.org/en/</a>.</p></li>
-<li><p>Python 2.7 or 3.0.</p></li>
+<li>Download and unzip the Elastic Beanstalk command line tools package at the AWS Sample Code &amp; Libraries website. You can install either version 2.6.0 or version 2.6.1 of the AWS DevTools. Version 2.6.0 uses Ruby. Version 2.6.1 uses Python.</li>
+<li>Git 1.6.6 or later. To download Git, go to <a href="http://git-scm.com/">http://git-scm.com/</a>.</li>
+<li>Ruby version 1.8.7 or later. To view and download Ruby clients, go to <a href="http://www.ruby-lang.org/en/">http://www.ruby-lang.org/en/</a>.</li>
+<li>Python 2.7 or 3.0.</li>
 </ul>
 <p>b. Windows</p>
 
 <ul>
-<li><p>Download and unzip the Elastic Beanstalk command line tools package at the AWS Sample Code &amp; Libraries website.</p></li>
-<li><p>Git 1.6.6 or later. To download Git, go to <a href="http://git-scm.com/">http://git-scm.com/</a>.</p></li>
-<li>
-<p>PowerShell 2.0.</p>
-
-<p>Note:  Windows 7 and Windows Server 2008 R2 come with PowerShell 2.0. If you are running an earlier version of Windows, you can download PowerShell 2.0. Visit <a href="http://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx">http://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx</a> for more details.</p>
+<li>Download and unzip the Elastic Beanstalk command line tools package at the AWS Sample Code &amp; Libraries website.</li>
+<li>Git 1.6.6 or later. To download Git, go to <a href="http://git-scm.com/">http://git-scm.com/</a>.</li>
+<li>PowerShell 2.0.
+<em>Note:  Windows 7 and Windows Server 2008 R2 come with PowerShell 2.0. If you are running an earlier version of Windows, you can download PowerShell 2.0. Visit <a href="http://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx">http://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx</a> for more details.</em>
 </li>
 </ul>
 </li>
-</ol><ol>
 <li>
 <p>Initialize your Git repository.</p>
 
 <div class="highlight highlight-bash"><pre>git init .
-<span class="s1">''</span><span class="err">'</span>
 </pre></div>
 </li>
-</ol><h2>
-<a name="step-2-configure-aws-elastic-beanstalk" class="anchor" href="#step-2-configure-aws-elastic-beanstalk"><span class="octicon octicon-link"></span></a>Step 2: Configure AWS Elastic Beanstalk</h2>
+</ol><h3>
+<a name="step-2-configure-aws-elastic-beanstalk" class="anchor" href="#step-2-configure-aws-elastic-beanstalk"><span class="octicon octicon-link"></span></a>Step 2: Configure AWS Elastic Beanstalk</h3>
 
 <p>You use eb, a command line tool, to configure AWS Elastic Beanstalk. If you haven't already installed eb on your local computer, do that now at the AWS Sample Code &amp; Libraries website. If you are running eb on a Linux operating system, you will need to install Python 2.7 or 3.0.</p>
 
 <p>Before you use eb, set your PATH to the location of eb. The following table shows an example for Linux/UNIX and Windows.</p>
+
+<table>
+<thead><tr>
+<th>On Linux and UNIX</th>
+<th>On Windows</th>
+</tr></thead>
+<tbody><tr>
+<td><code>$ export PATH=$PATH:&lt;path to unzipped EB CLI package&gt;/eb/linux/python2.7/</code></td>
+<td><code>C:\&gt; set PATH=%PATH%;&lt;path to unzipped EB CLI package&gt;\eb\windows\</code></td>
+</tr></tbody>
+</table><p>Use the init command, and AWS Elastic Beanstalk will prompt you to enter this information. If a default value is available, and you want to use it, press Enter.</p>
+
+<h4>
+<a name="to-configure-aws-elastic-beanstalk" class="anchor" href="#to-configure-aws-elastic-beanstalk"><span class="octicon octicon-link"></span></a>To configure AWS Elastic Beanstalk</h4>
+
+<ol>
+<li>
+<p>From your directory where you created your local repository, type the following command.</p>
+
+<div class="highlight highlight-bash"><pre>eb init
+</pre></div>
+</li>
+<li>
+<p>When you are prompted for the access key ID, type your access key ID. To get your access key ID, see How Do I Get Security Credentials? in the AWS General Reference.</p>
+
+<div class="highlight highlight-bash"><pre>Enter your AWS Access Key ID <span class="o">(</span>current value is <span class="s2">"AKIAIOSFODNN7EXAMPLE"</span><span class="o">)</span>: 
+</pre></div>
+</li>
+<li>
+<p>When you are prompted for the secret access key, type your secret access key. To get your secret access key, see How Do I Get Security Credentials? in the AWS General Reference.</p>
+
+<div class="highlight highlight-bash"><pre>Enter your AWS Secret Access Key <span class="o">(</span>current value is <span class="s2">"wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"</span><span class="o">)</span>: 
+</pre></div>
+</li>
+<li><p>When you are prompted for the AWS Elastic Beanstalk region, type the number of the region. For information about this product's regions, go to Regions and Endpoints in the Amazon Web Services General Reference. For this example, we'll use US East (Virginia).</p></li>
+<li>
+<p>When you are prompted for the AWS Elastic Beanstalk application name, type the name of the application. AWS Elastic Beanstalk autogenerates an application name based on the current directory name if an application name has not been previously configured. In this example, we use flaskapp.</p>
+
+<div class="highlight highlight-bash"><pre>Enter an AWS Elastic Beanstalk application name <span class="o">(</span>auto-generated value is <span class="s2">"windows"</span><span class="o">)</span>: flaskapp
+</pre></div>
+
+<p><em>Note:  If you have a space in your application name, make sure you do not use quotes.</em></p>
+</li>
+<li>
+<p>When you are prompted for the AWS Elastic Beanstalk environment name, type the name of the environment. AWS Elastic Beanstalk automatically creates an environment name based on your application name. If you want to accept the default, press Enter.</p>
+
+<div class="highlight highlight-bash"><pre>Enter an AWS Elastic Beanstalk environment name <span class="o">(</span>current value is <span class="s2">"flaskapp-env"</span><span class="o">)</span>: 
+</pre></div>
+
+<p><em>Note:  If you have a space in your application name, make sure you do not have a space in your environment name.</em></p>
+</li>
+<li>
+<p>When you are prompted, choose an environment tier. For this example, we'll use 1. For more information about environment tiers, see Architectural Overview.</p>
+
+<div class="highlight highlight-bash"><pre>Available environment tiers are:
+1<span class="o">)</span> WebServer::Standard::1.0
+2<span class="o">)</span> Worker::SQS/HTTP::1.0
+</pre></div>
+</li>
+<li><p>When you are prompted for the solution stack, type the number of the solution stack you want. For more information about solution stacks, see Supported Platforms. For this example, we'll use 32bit Amazon Linux 2013.09 running Python.</p></li>
+<li>
+<p>When you are prompted, choose an environment type.</p>
+
+<div class="highlight highlight-bash"><pre>Available environment types are: 
+1<span class="o">)</span> LoadBalanced
+2<span class="o">)</span> SingleInstance
+</pre></div>
+</li>
+<li>
+<p>When you are prompted to create an Amazon RDS database, type y or n. For more information about using Amazon RDS, see Using AWS Elastic Beanstalk with Amazon RDS. For this example, we'll type n.</p>
+
+<div class="highlight highlight-bash"><pre>Create RDS instance? <span class="o">[</span>y/n<span class="o">]</span>: n
+</pre></div>
+</li>
+<li><p>When you are prompted to enter your instance profile name, you can choose to create a default instance profile or use an existing instance profile. Using an instance profile enables IAM users and AWS services to gain access to temporary security credentials to make AWS API calls. Using instance profiles prevents you from having to store long-term security credentials on the EC2 instance. For more information about instance profiles, see Granting Permissions to Users and Services Using IAM Roles. For this example, we'll use Create a default instance profile.</p></li>
+</ol><p>After configuring AWS Elastic Beanstalk, you are ready to deploy a sample application.</p>
+
+<p>If you want to update your AWS Elastic Beanstalk configuration, you can use the init command again. When prompted, you can update your configuration options. If you want to keep any previous settings, press the Enter key.</p>
+
+<h3>
+<a name="step-3-create-application" class="anchor" href="#step-3-create-application"><span class="octicon octicon-link"></span></a>Step 3: Create Application</h3>
+
+<p>Next, you need to create and deploy a sample application. In these procedures, you use a sample application that is already prepared. AWS Elastic Beanstalk uses the configuration information you specified in the previous step to do the following:</p>
+
+<ul>
+<li>Create an application using the application name you specified.</li>
+<li>Launch an environment using the environment name you specified that provisions the AWS resources to host the application.</li>
+<li>Deploy the application into the newly created environment.</li>
+</ul><p>Use the start command to create and deploy a sample application.</p>
+
+<h4>
+<a name="to-create-the-application" class="anchor" href="#to-create-the-application"><span class="octicon octicon-link"></span></a>To create the application</h4>
+
+<ul>
+<li>
+<p>From your directory where you created your local repository, type the following command.</p>
+
+<div class="highlight highlight-bash"><pre>eb start
+</pre></div>
+</li>
+</ul><p>This process may take several minutes to complete. AWS Elastic Beanstalk will provide status updates during the process. If at any time you want to stop polling for status updates, press Ctrl+C. Once the environment status is Green, AWS Elastic Beanstalk will output a URL for the application.</p>
+
+<h3>
+<a name="step-4-view-application" class="anchor" href="#step-4-view-application"><span class="octicon octicon-link"></span></a>Step 4: View Application</h3>
+
+<p>In the previous step, you created an application and deployed it to AWS Elastic Beanstalk. After the environment is ready and its status is Green, AWS Elastic Beanstalk provides a URL to view the application. In this step, you can check the status of the environment to make sure it is set to Green and then copy and paste the URL to view the application.</p>
+
+<p>Use the status command to check the environment status, and then use the URL to view the application.</p>
+
+<h4>
+<a name="to-view-the-application" class="anchor" href="#to-view-the-application"><span class="octicon octicon-link"></span></a>To view the application</h4>
+
+<ol>
+<li>
+<p>From your directory where you created your local repository, type the following command.</p>
+
+<div class="highlight highlight-bash"><pre>eb status --verbose
+</pre></div>
+
+<p>AWS Elastic Beanstalk displays the environment status. If the environment is set to Green, AWS Elastic Beanstalk displays the URL for the application. If you attached an RDS DB instance to your environment, your RDS DB information is displayed.</p>
+</li>
+<li><p>Copy and paste the URL into your web browser to view your application.</p></li>
+</ol><h3>
+<a name="step-5-update-application" class="anchor" href="#step-5-update-application"><span class="octicon octicon-link"></span></a>Step 5: Update Application</h3>
+
+<p>After you have deployed a sample application, you can update the sample application with your own application. In this step, we'll update the sample application with a simple "Hello World" Flask application.</p>
+
+<h4>
+<a name="to-update-the-sample-application" class="anchor" href="#to-update-the-sample-application"><span class="octicon octicon-link"></span></a>To update the sample application</h4>
+
+<ol>
+<li>
+<p>On your local computer, create a requirements.txt file.</p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">Flask</span><span class="o">==</span>0.9
+</pre></div>
+
+<p><em>Note:  For more information about the requirements file, go to Requirements files.
+On your local computer, create an application.py file.</em></p>
+
+<div class="highlight highlight-python"><pre><span class="kn">import</span> <span class="nn">flask</span>
+
+<span class="n">application</span> <span class="o">=</span> <span class="n">flask</span><span class="o">.</span><span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="c">#Set application.debug=true to enable tracebacks on Beanstalk log output. </span>
+<span class="c">#Make sure to remove this line before deploying to production.</span>
+<span class="n">application</span><span class="o">.</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span>
+
+<span class="nd">@application.route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">"Hello world!"</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">application</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s">'0.0.0.0'</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</li>
+<li>
+<p>Add your two files to your local Git repository, and then commit your change.</p>
+
+<div class="highlight highlight-bash"><pre>git add .
+git commit -m <span class="s2">"update app"</span>
+</pre></div>
+
+<p><em>Note:  For information about Git commands, go to Git - Fast Version Control System.
+Create an application version matching your local repository and deploy to the Elastic Beanstalk environment if specified.</em></p>
+
+<div class="highlight highlight-bash"><pre>git aws.push
+</pre></div>
+
+<p>You can also configure Git to push from a specific branch to a specific environment. For more information, see Deploying a Git Branch to a Specific Environment.</p>
+</li>
+<li><p>Refresh your web browser to view your updated application when your environment is ready.</p></li>
+</ol><p>You can access the logs for your EC2 instances running your application. For instructions on accessing your logs, see Working with Logs.</p>
+
+<h3>
+<a name="step-6-clean-up" class="anchor" href="#step-6-clean-up"><span class="octicon octicon-link"></span></a>Step 6: Clean Up</h3>
+
+<p>If you no longer want to run your application, you can clean up by terminating your environment and deleting your application.</p>
+
+<p>Use the stop command to terminate your environment and the delete command to delete your application.</p>
+
+<h4>
+<a name="to-delete-the-application" class="anchor" href="#to-delete-the-application"><span class="octicon octicon-link"></span></a>To delete the application</h4>
+
+<ol>
+<li>
+<p>From your directory where you created your local repository, type the following command.</p>
+
+<div class="highlight highlight-bash"><pre>eb stop
+</pre></div>
+
+<p>This process may take a few minutes. AWS Elastic Beanstalk will display a message once the environment has been successfully terminated.
+<em>Note:  If you attached an RDS DB instance to your environment, your RDS DB will be deleted, and you will lose your data. To save your data, create a snapshot before you delete the application. For instructions on how to create a snapshot, go to Creating a DB Snapshot in the Amazon Relational Database Service User Guide.</em></p>
+</li>
+<li>
+<p>From your directory where you installed the command line interface, type the following command.</p>
+
+<div class="highlight highlight-bash"><pre>eb delete
+</pre></div>
+
+<p>AWS Elastic Beanstalk will display a message once it has successfully deleted the application.</p>
+</li>
+</ol>
       </section>
       <footer>
         <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
