@@ -1,5 +1,5 @@
 Deploying a Flask Application to AWS Elastic Beanstalk
-===============
+------
 Simple Python and Flask sample application from [AWS Elastic Beanstalk Developer Guide](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_Python_flask.html)
 
 
@@ -8,11 +8,11 @@ This section walks you through deploying a sample application to AWS Elastic Bea
 - Flask 0.9
 - Flask 0.8
 
-Step 1: Initialize Your Git Repository
-------
+###Step 1: Initialize Your Git Repository
+
 Eb is a command line interface that enables you to deploy applications quickly and more easily using Git. Eb is available as part of the Elastic Beanstalk command line tools package. Follow the steps below to install eb and initialize your Git repository.
 
-To install eb, its prerequisite software, and initialize your Git repository
+####To install eb, its prerequisite software, and initialize your Git repository
 
 1. Install the following software onto your local computer:
 
@@ -34,7 +34,7 @@ To install eb, its prerequisite software, and initialize your Git repository
 
     - PowerShell 2.0.
 
-        Note:  Windows 7 and Windows Server 2008 R2 come with PowerShell 2.0. If you are running an earlier version of Windows, you can download PowerShell 2.0. Visit http://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx for more details.
+        *Note:  Windows 7 and Windows Server 2008 R2 come with PowerShell 2.0. If you are running an earlier version of Windows, you can download PowerShell 2.0. Visit http://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx for more details.*
 
 2. Initialize your Git repository.
 
@@ -42,8 +42,7 @@ To install eb, its prerequisite software, and initialize your Git repository
   git init .
   ```
 
-Step 2: Configure AWS Elastic Beanstalk
-------
+###Step 2: Configure AWS Elastic Beanstalk
 
 You use eb, a command line tool, to configure AWS Elastic Beanstalk. If you haven't already installed eb on your local computer, do that now at the AWS Sample Code & Libraries website. If you are running eb on a Linux operating system, you will need to install Python 2.7 or 3.0.
 
@@ -56,7 +55,7 @@ On Linux and UNIX	| On Windows
 
 Use the init command, and AWS Elastic Beanstalk will prompt you to enter this information. If a default value is available, and you want to use it, press Enter.
 
-To configure AWS Elastic Beanstalk
+####To configure AWS Elastic Beanstalk
 
 1. From your directory where you created your local repository, type the following command.
 
@@ -83,14 +82,14 @@ To configure AWS Elastic Beanstalk
   ```bash
   Enter an AWS Elastic Beanstalk application name (auto-generated value is "windows"): flaskapp
   ```
-  Note:  If you have a space in your application name, make sure you do not use quotes.
+  *Note:  If you have a space in your application name, make sure you do not use quotes.*
 
 6. When you are prompted for the AWS Elastic Beanstalk environment name, type the name of the environment. AWS Elastic Beanstalk automatically creates an environment name based on your application name. If you want to accept the default, press Enter.
 
   ```bash
   Enter an AWS Elastic Beanstalk environment name (current value is "flaskapp-env"): 
   ```
-  Note:  If you have a space in your application name, make sure you do not have a space in your environment name.
+  *Note:  If you have a space in your application name, make sure you do not have a space in your environment name.*
 
 7. When you are prompted, choose an environment tier. For this example, we'll use 1. For more information about environment tiers, see Architectural Overview.
 
@@ -121,3 +120,38 @@ To configure AWS Elastic Beanstalk
 After configuring AWS Elastic Beanstalk, you are ready to deploy a sample application.
 
 If you want to update your AWS Elastic Beanstalk configuration, you can use the init command again. When prompted, you can update your configuration options. If you want to keep any previous settings, press the Enter key.
+
+###Step 3: Create Application
+
+Next, you need to create and deploy a sample application. In these procedures, you use a sample application that is already prepared. AWS Elastic Beanstalk uses the configuration information you specified in the previous step to do the following:
+
+  - Create an application using the application name you specified.
+  - Launch an environment using the environment name you specified that provisions the AWS resources to host the application.
+  - Deploy the application into the newly created environment.
+
+Use the start command to create and deploy a sample application.
+
+####To create the application
+
+  - From your directory where you created your local repository, type the following command.
+
+  `eb start`
+  
+This process may take several minutes to complete. AWS Elastic Beanstalk will provide status updates during the process. If at any time you want to stop polling for status updates, press Ctrl+C. Once the environment status is Green, AWS Elastic Beanstalk will output a URL for the application.
+
+###Step 4: View Application
+
+In the previous step, you created an application and deployed it to AWS Elastic Beanstalk. After the environment is ready and its status is Green, AWS Elastic Beanstalk provides a URL to view the application. In this step, you can check the status of the environment to make sure it is set to Green and then copy and paste the URL to view the application.
+
+Use the status command to check the environment status, and then use the URL to view the application.
+
+####To view the application
+
+1. From your directory where you created your local repository, type the following command.
+
+  ```bash
+  eb status --verbose
+  ```
+  AWS Elastic Beanstalk displays the environment status. If the environment is set to Green, AWS Elastic Beanstalk displays the URL for the application. If you attached an RDS DB instance to your environment, your RDS DB information is displayed.
+
+2. Copy and paste the URL into your web browser to view your application.
