@@ -55,7 +55,7 @@
 <p>a. Linux/Unix/MAC</p>
 
 <ul>
-<li>Download and unzip the Elastic Beanstalk command line tools package at the AWS Sample Code &amp; Libraries website. You can install either version 2.6.0 or version 2.6.1 of the AWS DevTools. Version 2.6.0 uses Ruby. Version 2.6.1 uses Python.</li>
+<li>Download and unzip the Elastic Beanstalk command line tools package at the <a href="http://aws.amazon.com/code/6752709412171743">AWS Sample Code &amp; Libraries website</a>. You can install either version 2.6.0 or version 2.6.1 of the AWS DevTools. Version 2.6.0 uses Ruby. Version 2.6.1 uses Python.</li>
 <li>Git 1.6.6 or later. To download Git, go to <a href="http://git-scm.com/">http://git-scm.com/</a>.</li>
 <li>Ruby version 1.8.7 or later. To view and download Ruby clients, go to <a href="http://www.ruby-lang.org/en/">http://www.ruby-lang.org/en/</a>.</li>
 <li>Python 2.7 or 3.0.</li>
@@ -63,7 +63,7 @@
 <p>b. Windows</p>
 
 <ul>
-<li>Download and unzip the Elastic Beanstalk command line tools package at the AWS Sample Code &amp; Libraries website.</li>
+<li>Download and unzip the Elastic Beanstalk command line tools package at the <a href="http://aws.amazon.com/code/6752709412171743">AWS Sample Code &amp; Libraries website</a>.</li>
 <li>Git 1.6.6 or later. To download Git, go to <a href="http://git-scm.com/">http://git-scm.com/</a>.</li>
 <li>PowerShell 2.0.
 <em>Note:  Windows 7 and Windows Server 2008 R2 come with PowerShell 2.0. If you are running an earlier version of Windows, you can download PowerShell 2.0. Visit <a href="http://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx">http://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx</a> for more details.</em>
@@ -79,7 +79,7 @@
 </ol><h3>
 <a name="step-2-configure-aws-elastic-beanstalk" class="anchor" href="#step-2-configure-aws-elastic-beanstalk"><span class="octicon octicon-link"></span></a>Step 2: Configure AWS Elastic Beanstalk</h3>
 
-<p>You use eb, a command line tool, to configure AWS Elastic Beanstalk. If you haven't already installed eb on your local computer, do that now at the AWS Sample Code &amp; Libraries website. If you are running eb on a Linux operating system, you will need to install Python 2.7 or 3.0.</p>
+<p>You use eb, a command line tool, to configure AWS Elastic Beanstalk. If you haven't already installed eb on your local computer, do that now at the <a href="http://aws.amazon.com/code/6752709412171743">AWS Sample Code &amp; Libraries website</a>. If you are running eb on a Linux operating system, you will need to install Python 2.7 or 3.0.</p>
 
 <p>Before you use eb, set your PATH to the location of eb. The following table shows an example for Linux/UNIX and Windows.</p>
 
@@ -105,18 +105,18 @@
 </pre></div>
 </li>
 <li>
-<p>When you are prompted for the access key ID, type your access key ID. To get your access key ID, see How Do I Get Security Credentials? in the AWS General Reference.</p>
+<p>When you are prompted for the access key ID, type your access key ID. To get your access key ID, see <a href="http://docs.aws.amazon.com/general/latest/gr/getting-aws-sec-creds.html">How Do I Get Security Credentials?</a> in the AWS General Reference.</p>
 
 <div class="highlight highlight-bash"><pre>Enter your AWS Access Key ID <span class="o">(</span>current value is <span class="s2">"AKIAIOSFODNN7EXAMPLE"</span><span class="o">)</span>: 
 </pre></div>
 </li>
 <li>
-<p>When you are prompted for the secret access key, type your secret access key. To get your secret access key, see How Do I Get Security Credentials? in the AWS General Reference.</p>
+<p>When you are prompted for the secret access key, type your secret access key. To get your secret access key, see <a href="http://docs.aws.amazon.com/general/latest/gr/getting-aws-sec-creds.html">How Do I Get Security Credentials?</a> in the AWS General Reference.</p>
 
 <div class="highlight highlight-bash"><pre>Enter your AWS Secret Access Key <span class="o">(</span>current value is <span class="s2">"wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"</span><span class="o">)</span>: 
 </pre></div>
 </li>
-<li><p>When you are prompted for the AWS Elastic Beanstalk region, type the number of the region. For information about this product's regions, go to Regions and Endpoints in the Amazon Web Services General Reference. For this example, we'll use US East (Virginia).</p></li>
+<li><p>When you are prompted for the AWS Elastic Beanstalk region, type the number of the region. For information about this product's regions, go to <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html?r=1166">Regions and Endpoints</a> in the Amazon Web Services General Reference. For this example, we'll use US East (Virginia).</p></li>
 <li>
 <p>When you are prompted for the AWS Elastic Beanstalk application name, type the name of the application. AWS Elastic Beanstalk autogenerates an application name based on the current directory name if an application name has not been previously configured. In this example, we use flaskapp.</p>
 
@@ -134,14 +134,14 @@
 <p><em>Note:  If you have a space in your application name, make sure you do not have a space in your environment name.</em></p>
 </li>
 <li>
-<p>When you are prompted, choose an environment tier. For this example, we'll use 1. For more information about environment tiers, see Architectural Overview.</p>
+<p>When you are prompted, choose an environment tier. For this example, we'll use 1. For more information about environment tiers, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.concepts.architecture.html">Architectural Overview</a>.</p>
 
 <div class="highlight highlight-bash"><pre>Available environment tiers are:
 1<span class="o">)</span> WebServer::Standard::1.0
 2<span class="o">)</span> Worker::SQS/HTTP::1.0
 </pre></div>
 </li>
-<li><p>When you are prompted for the solution stack, type the number of the solution stack you want. For more information about solution stacks, see Supported Platforms. For this example, we'll use 32bit Amazon Linux 2013.09 running Python.</p></li>
+<li><p>When you are prompted for the solution stack, type the number of the solution stack you want. For more information about solution stacks, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported Platforms</a>. For this example, we'll use 32bit Amazon Linux 2013.09 running Python.</p></li>
 <li>
 <p>When you are prompted, choose an environment type.</p>
 
@@ -151,12 +151,12 @@
 </pre></div>
 </li>
 <li>
-<p>When you are prompted to create an Amazon RDS database, type y or n. For more information about using Amazon RDS, see Using AWS Elastic Beanstalk with Amazon RDS. For this example, we'll type n.</p>
+<p>When you are prompted to create an Amazon RDS database, type y or n. For more information about using Amazon RDS, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.RDS.html">Using AWS Elastic Beanstalk with Amazon RDS</a>. For this example, we'll type n.</p>
 
 <div class="highlight highlight-bash"><pre>Create RDS instance? <span class="o">[</span>y/n<span class="o">]</span>: n
 </pre></div>
 </li>
-<li><p>When you are prompted to enter your instance profile name, you can choose to create a default instance profile or use an existing instance profile. Using an instance profile enables IAM users and AWS services to gain access to temporary security credentials to make AWS API calls. Using instance profiles prevents you from having to store long-term security credentials on the EC2 instance. For more information about instance profiles, see Granting Permissions to Users and Services Using IAM Roles. For this example, we'll use Create a default instance profile.</p></li>
+<li><p>When you are prompted to enter your instance profile name, you can choose to create a default instance profile or use an existing instance profile. Using an instance profile enables IAM users and AWS services to gain access to temporary security credentials to make AWS API calls. Using instance profiles prevents you from having to store long-term security credentials on the EC2 instance. For more information about instance profiles, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.html#AWSHowTo.iam.roles">Granting Permissions to Users and Services Using IAM Roles</a>. For this example, we'll use Create a default instance profile.</p></li>
 </ol><p>After configuring AWS Elastic Beanstalk, you are ready to deploy a sample application.</p>
 
 <p>If you want to update your AWS Elastic Beanstalk configuration, you can use the init command again. When prompted, you can update your configuration options. If you want to keep any previous settings, press the Enter key.</p>
@@ -219,7 +219,7 @@
 <div class="highlight highlight-bash"><pre><span class="nv">Flask</span><span class="o">==</span>0.9
 </pre></div>
 
-<p><em>Note:  For more information about the requirements file, go to Requirements files.
+<p><em>Note:  For more information about the requirements file, go to <a href="http://www.pip-installer.org/en/latest/cookbook.html#requirements-files">Requirements files</a>.
 On your local computer, create an application.py file.</em></p>
 
 <div class="highlight highlight-python"><pre><span class="kn">import</span> <span class="nn">flask</span>
@@ -245,16 +245,16 @@ On your local computer, create an application.py file.</em></p>
 git commit -m <span class="s2">"update app"</span>
 </pre></div>
 
-<p><em>Note:  For information about Git commands, go to Git - Fast Version Control System.
+<p><em>Note:  For information about Git commands, go to <a href="http://git-scm.com/">Git - Fast Version Control System</a>.
 Create an application version matching your local repository and deploy to the Elastic Beanstalk environment if specified.</em></p>
 
 <div class="highlight highlight-bash"><pre>git aws.push
 </pre></div>
 
-<p>You can also configure Git to push from a specific branch to a specific environment. For more information, see Deploying a Git Branch to a Specific Environment.</p>
+<p>You can also configure Git to push from a specific branch to a specific environment. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-reference-branch-environment.html">Deploying a Git Branch to a Specific Environment</a>.</p>
 </li>
 <li><p>Refresh your web browser to view your updated application when your environment is ready.</p></li>
-</ol><p>You can access the logs for your EC2 instances running your application. For instructions on accessing your logs, see Working with Logs.</p>
+</ol><p>You can access the logs for your EC2 instances running your application. For instructions on accessing your logs, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.loggingS3.title.html">Working with Logs</a>.</p>
 
 <h3>
 <a name="step-6-clean-up" class="anchor" href="#step-6-clean-up"><span class="octicon octicon-link"></span></a>Step 6: Clean Up</h3>
@@ -274,17 +274,15 @@ Create an application version matching your local repository and deploy to the E
 </pre></div>
 
 <p>This process may take a few minutes. AWS Elastic Beanstalk will display a message once the environment has been successfully terminated.
-<em>Note:  If you attached an RDS DB instance to your environment, your RDS DB will be deleted, and you will lose your data. To save your data, create a snapshot before you delete the application. For instructions on how to create a snapshot, go to Creating a DB Snapshot in the Amazon Relational Database Service User Guide.</em></p>
+<em>Note:  If you attached an RDS DB instance to your environment, your RDS DB will be deleted, and you will lose your data. To save your data, create a snapshot before you delete the application. For instructions on how to create a snapshot, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateSnapshot.html">Creating a DB Snapshot</a> in the Amazon Relational Database Service User Guide.</em></p>
 </li>
 <li>
 <p>From your directory where you installed the command line interface, type the following command.</p>
 
 <div class="highlight highlight-bash"><pre>eb delete
 </pre></div>
-
-<p>AWS Elastic Beanstalk will display a message once it has successfully deleted the application.</p>
 </li>
-</ol>
+</ol><p>AWS Elastic Beanstalk will display a message once it has successfully deleted the application.</p>
       </section>
       <footer>
         <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
