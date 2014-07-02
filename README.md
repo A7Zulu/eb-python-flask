@@ -16,7 +16,7 @@ To install eb, its prerequisite software, and initialize your Git repository
 
 1. Install the following software onto your local computer:
 
-  1. Linux/Unix/MAC
+  a. Linux/Unix/MAC
 
     - Download and unzip the Elastic Beanstalk command line tools package at the AWS Sample Code & Libraries website. You can install either version 2.6.0 or version 2.6.1 of the AWS DevTools. Version 2.6.0 uses Ruby. Version 2.6.1 uses Python.
 
@@ -26,7 +26,7 @@ To install eb, its prerequisite software, and initialize your Git repository
 
     - Python 2.7 or 3.0.
 
-  2. Windows
+  b. Windows
 
     - Download and unzip the Elastic Beanstalk command line tools package at the AWS Sample Code & Libraries website.
 
@@ -37,3 +37,15 @@ To install eb, its prerequisite software, and initialize your Git repository
         Note:  Windows 7 and Windows Server 2008 R2 come with PowerShell 2.0. If you are running an earlier version of Windows, you can download PowerShell 2.0. Visit http://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx for more details.
 
 2. Initialize your Git repository.
+
+  ```bash
+  git init .
+  '''
+
+Step 2: Configure AWS Elastic Beanstalk
+------
+
+You use eb, a command line tool, to configure AWS Elastic Beanstalk. If you haven't already installed eb on your local computer, do that now at the AWS Sample Code & Libraries website. If you are running eb on a Linux operating system, you will need to install Python 2.7 or 3.0.
+
+Before you use eb, set your PATH to the location of eb. The following table shows an example for Linux/UNIX and Windows.
+
