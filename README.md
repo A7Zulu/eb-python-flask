@@ -40,7 +40,7 @@ To install eb, its prerequisite software, and initialize your Git repository
 
   ```bash
   git init .
-  '''
+  ```
 
 Step 2: Configure AWS Elastic Beanstalk
 ------
